@@ -1,21 +1,12 @@
 from calculator import Calculator
 
 class Prueba():
-    with open ('numeros.txt', 'r') as f:
-        leer = f.readlines()
-    print(leer)
+    with open ('numeros.txt', 'r') as operaciones:
+        for e in operaciones:
+            e = e.split()
+            e = " ".join(e.split())
 
-    # leer = "-36 / 61 -0.5901639344262295"
-    numeros = leer()
-    print(numeros[3])
-
-  #variables
-    num1 = numeros[0]
-    num2 = numeros[2]
-    expresion = numeros[1]
-    result = numeros[3]
-
-    def pruebas(expresion, num1, num2, result):
+    def pruebas():
         if  expresion == "/":
             division = Calculator(num1, num2)
             resultado = Calculator.div(division)
@@ -61,4 +52,4 @@ class Prueba():
         else:
             print( "Caracter no existente")
 
-    print(pruebas(expresion, num1, num2, result))
+    print(pruebas())
