@@ -1,55 +1,55 @@
 from calculator import Calculator
 
 class Prueba():
-    with open ('numeros.txt', 'r') as operaciones:
-        for e in operaciones:
-            e = e.split()
-            e = " ".join(e.split())
 
-    def pruebas():
-        if  expresion == "/":
-            division = Calculator(num1, num2)
-            resultado = Calculator.div(division)
-            print(resultado)
-        
-            if result == resultado:
-                return f"{num1} {expresion} {num2} = {result} =====> Prueba superada!!"
-            else:
-                return f"{num1} {expresion} {num2} = {result} =====> No supero la prueba :("
+    problemas = Calculator
+    list_Operaciones = []
+    num_fila = 0
 
-        elif expresion == "+":
-            suma = Calculator(num1, num2)
-            resultado = Calculator.suma(suma)
-            if result != resultado:
-                return f"{num1} {expresion} {num2} = {result} -----> No supero la prueba :( \n"
-            else:
-                return (f"{num1} {expresion} {num2} = {result} -----> Prueba superada!! \n")
+    with open ('numeros.txt', 'r') as ArchivoTexto:
+        for s in ArchivoTexto:
+            operaciones = s.split(' ')
+            list_Operaciones.append(operaciones)
 
-        elif expresion == "-":
-            resta = Calculator(num1, num2)
-            resultado = Calculator.resta(resta)
-            if result != resultado:
-                return f"{num1} {expresion} {num2} = {result} -----> No supero la prueba :( \n"
-            else:
-                return (f"{num1} {expresion} {num2} = {result} -----> Prueba superada!! \n")
+    # def pruebas(list_Operaciones,operaciones,problemas):
+        for e in list_Operaciones:
+            num_fila += 1
+            if  e[1] == "+":
+                operaciones = problemas.suma(e[0],e[2])
+                if operaciones == float(e[3]):
+                    print (f"Fila {num_fila} | {e[0]} + {e[2]} = {e[3]} =====> Prueba superada!! {e[3]}")
+                else:
+                    print (f"Fila {num_fila} | {e[0]} + {e[2]} = {e[3]} =====> No supero la prueba :( {e[3]}")
 
-        elif expresion == "*":
-            multiplicacion = Calculator(num1, num2)
-            resultado = Calculator.multi(multiplicacion)
-            if result != resultado:
-                return f"{num1} {expresion} {num2} = {result} -----> No supero la prueba :( \n"
-            else:
-                return (f"{num1} {expresion} {num2} = {result} -----> Prueba superada!! \n")
+            elif e[1] == "-":
+                operaciones = problemas.resta(e[0],e[2])
+                if operaciones == float(e[3]):
+                    print (f"Fila {num_fila} | {e[0]} - {e[2]} = {e[3]} =====> No supero la prueba :( {e[3]}")
+                else:
+                    print (f"Fila {num_fila} | {e[0]} - {e[2]} = {e[3]} =====> Prueba superada!! {e[3]}")
 
-        elif  expresion == "^":
-            potencia = Calculator(num1, num2)
-            resultado = Calculator.pot(potencia)
-            if result != resultado:
-                return f"{num1} {expresion} {num2} = {result} -----> No supero la prueba :( \n"
-            else:
-                return (f"{num1} {expresion} {num2} = {result} -----> Prueba superada!! \n")
+            elif e[1] == "/":
+                operaciones = problemas.div(e[0],e[2])
+                if operaciones == float(e[3]):
+                    print (f"Fila {num_fila} | {e[0]} / {e[2]} = {e[3]} =====> No supero la prueba :( {e[3]}")
+                else:
+                    print (f"Fila {num_fila} | {e[0]} / {e[2]} = {e[3]} =====> Prueba superada!! {e[3]}")
 
-        else:
-            print( "Caracter no existente")
+            elif e[1] == "*":
+                operaciones = problemas.multi(e[0],e[2])
+                if operaciones == float(e[3]):
+                    print (f"Fila {num_fila} | {e[0]} * {e[2]} = {e[3]} =====> No supero la prueba :( {e[3]}")
+                else:
+                    print (f"Fila {num_fila} | {e[0]} * {e[2]} = {e[3]} =====> Prueba superada!! {e[3]}")
 
-    print(pruebas())
+            elif e[1] == "^":
+                operaciones = problemas.div(e[0],e[2])
+                try: 
+                    if operaciones == float(e[3]):
+                        print (f"Fila {num_fila} | {e[0]} ^ {e[2]} = {e[3]} =====> No supero la prueba :( {e[3]}")
+                    else:
+                        print (f"Fila {num_fila} | {e[0]} ^ {e[2]} = {e[3]} =====> Prueba superada!! {e[3]}")
+                except:
+                    print( "Operacion no valida")
+
+    # print(pruebas(list_Operaciones,operaciones,problemas))
