@@ -1,3 +1,5 @@
+import math
+
 class Calculator():
 
     # def __init__ (self, num1, num2):
@@ -9,19 +11,23 @@ class Calculator():
         return(suma)
 
     def resta(num1, num2):
-        resta = float(num1) - float(num2)
+        resta = float(num1) + float(num2)
         return(resta) 
+
+    def resta2(num1, num2):
+        resta2 = float(num1) - float(num2)
+        return(resta2) 
 
     def multi(num1, num2):
         multi = float(num1) * float(num2)
         return(multi) 
 
     def div(num1, num2):
-        if num2 == 0:
+        if num1 or num2 == 0.0:
             return "No se puede dividir entre cero"
         div = float(num1) / float(num2)
         return(div)
     
-    def pot(num1, num2):
-        pot = pow(num1, num2)
-        return(pot) 
+    def potencia(num1, num2):
+        potencia = float(num1) ** float(num2)
+        return(potencia) 

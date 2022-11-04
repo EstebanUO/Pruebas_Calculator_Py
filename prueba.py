@@ -28,6 +28,13 @@ class Prueba():
                 else:
                     print (f"Fila {num_fila} | {e[0]} - {e[2]} = {e[3]} =====> Prueba superada!! {e[3]}")
 
+            elif e[1] == "-":
+                operaciones = problemas.resta2(e[0],e[2])
+                if operaciones == float(e[3]):
+                    print (f"Fila {num_fila} | {e[0]} - {e[2]} = {e[3]} =====> No supero la prueba :( {e[3]}")
+                else:
+                    print (f"Fila {num_fila} | {e[0]} - {e[2]} = {e[3]} =====> Prueba superada!! {e[3]}")
+
             elif e[1] == "/":
                 operaciones = problemas.div(e[0],e[2])
                 if operaciones == float(e[3]):
@@ -43,7 +50,7 @@ class Prueba():
                     print (f"Fila {num_fila} | {e[0]} * {e[2]} = {e[3]} =====> Prueba superada!! {e[3]}")
 
             elif e[1] == "^":
-                operaciones = problemas.div(e[0],e[2])
+                operaciones = problemas.potencia(e[0],e[2])
                 try: 
                     if operaciones == float(e[3]):
                         print (f"Fila {num_fila} | {e[0]} ^ {e[2]} = {e[3]} =====> No supero la prueba :( {e[3]}")
