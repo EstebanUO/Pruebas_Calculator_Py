@@ -18,15 +18,17 @@ class Calculator():
         resta2 = float(num1) - float(num2)
         return(resta2) 
 
-    def multi(num1, num2):
-        multi = float(num1) * float(num2)
-        return(multi) 
+    def multiplicar(num1, num2):
+        multiplicar = float(num1) * float(num2)
+        return(multiplicar) 
 
-    def div(num1, num2):
-        if num1 or num2 == 0.0:
-            return "No se puede dividir entre cero"
-        div = float(num1) / float(num2)
-        return(div)
+    def dividir(num1, num2):
+        if (float(num2) == 0):
+            mensaje= "No se puede dividir entre cero"
+        else:
+            dividir2 = float(num1) / float(num2)
+            mensaje=(dividir2)
+        return mensaje
     
     def potencia(num1, num2):
         potencia = float(num1) ** float(num2)
